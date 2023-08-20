@@ -24,12 +24,11 @@ public class WeddingController : Controller
         db = context;
     }
 
-
     [HttpGet("Dashboard")]
     public IActionResult Dashboard()
     {
-    List<Wedding> weddings = db.Weddings.Include(v => v.Creator).Include(l => l.WeddingGuests).ToList();        
-        //passing weddingss down to the view file
+    List<Wedding> weddings = db.Weddings.Include(w => w.Creator).Include(g => g.WeddingGuests).ToList();        
+        //passing weddings down to the view file
         return View("CREATE ALL PAGE", weddings);
 
     }
