@@ -1,0 +1,44 @@
+@model User
+
+<div class="container shadow-lg">
+    <div class="row">
+        <div class="col mb-5 rounded">
+            <form asp-action="Register">
+                <h3 class="text-center">Register</h3>
+                <div class="mb-3 p-3">
+                    <label asp-for="FirstName">First Name:</label>
+                    <input type="text" class="form-control" id="FirstName" placeholder="Please Enter Your First Name"
+                        asp-for="FirstName">
+                    <span asp-validation-for="FirstName" class="text-danger font-weight-bold"></span>
+                </div>
+                <div class="mb-3 p-3">
+                    <label asp-for="LastName">Last Name:</label>
+                    <input type="text" class="form-control" id="LastName" placeholder="Please Enter Your Last Name"
+                        asp-for="LastName">
+                    <span asp-validation-for="LastName" class="text-danger font-weight-bold"></span>
+                </div>
+                <div class="mb-3 p-3">
+                    <label asp-for="Email">Email:</label>
+                    <input type="text" class="form-control" id="Email" placeholder="Please Enter Your Email"
+                        asp-for="Email">
+                    <span asp-validation-for="LastName" class="text-danger font-weight-bold"></span>
+                </div>
+                <div class="mb-3 p-3">
+                    <label asp-for="Password">Password:</label>
+                    <input type="text" class="form-control" id="Password" placeholder="Create Your Password"
+                        asp-for="Password">
+                    <span asp-validation-for="Password" class="text-danger font-weight-bold"></span>
+                </div>
+                <div class="mb-3 p-3">
+                    <label asp-for="PasswordConfirm">Confirm Password:</label>
+                    <input type="text" class="form-control" id="PasswordConfirm" placeholder="Confirm Previous Password"
+                        asp-for="PasswordConfirm">
+                    <span asp-validation-for="PasswordConfirm" class="text-danger font-weight-bold"></span>
+                </div>
+                <div class="mb-3 w-25 mx-auto">
+                    <button class="btn btn-outline-primary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
