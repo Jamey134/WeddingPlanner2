@@ -11,7 +11,7 @@
             <p>Add a Dish</p> *@
         </div>
     </div>
-    <form asp-action="Create" asp-controller="Wedding" method="post" class="w-75 mx-auto">
+    <form asp-action="Edit" asp-controller="Wedding" method="post" class="w-75 mx-auto">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -33,28 +33,13 @@
                 </div>
                 <div class="col">
                     <div class="input-group mb-3">
-                        @*<span class="input-group-text" for="Tastiness">Tastiness</span>
-                        <select asp-for="Tastiness" class="form-control" type="text" id="Tastiness">
-                        <option selected>Select A Level of Tastiness </option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        </select>
-                        </div>*@
                         <label asp-for="Address"></label>
-                        <input asp-for="Address" type="text" class="form-control"/>
+                        <input asp-for="Address" type="text" class="form-control" />
                         <span asp-validation-for="Address" class="text-danger font-weight-bold"></span>
-                        @* <div class="input-group mb-3">
-                        <span class="input-group-text" for="Description"> Description </span>
-                        <textarea asp-for="Description" class="form-control" id="Description" cols="20"
-                        rows="3"></textarea>
-                        </div> *@
                     </div>
                 </div>
                 <div class="row">
-                    <button class="btn btn-dark w-25 mx-auto" type="submit">Create</button>
+                    <button class="btn btn-dark w-25 mx-auto" type="submit">Update</button>
                 </div>
             </div>
     </form>

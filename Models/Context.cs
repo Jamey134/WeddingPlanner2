@@ -16,4 +16,5 @@ public class MyContext : DbContext
     public DbSet<Wedding> Weddings { get; set; } 
     // public DbSet<Guest> Guests { get; set; }  //<---- Change possibly?
     public DbSet<User> Users { get; set; }  //<---- Change possibly?
+    public DbSet<WeddingGuest> WeddingGuests { get; set; } 
 }
