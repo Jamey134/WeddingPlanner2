@@ -1,0 +1,70 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model Wedding
+<div class="container-fluid text-center">
+    <div class="row">
+        <h2>Plan a Wedding</h2>
+        <div class="d-flex justify-content-center w-25 mx-auto">
+            <a asp-action="Index">Home</a>
+            @* <span class="ms-1 me-1"> | </span>
+            <p>Add a Dish</p> *@
+        </div>
+    </div>
+    <form asp-action="Create" asp-controller="Wedding" method="post" class="w-75 mx-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <label asp-for="WedderOne"></label>
+                        <input asp-for="WedderOne" type="text" class="form-control" />
+                        <span asp-validation-for="WedderOne" class="text-danger font-weight-bold">Wedder One: </span>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label asp-for="WedderTwo"></label>
+                        <input asp-for="WedderTwo" type="text" class="form-control" />
+                        <span asp-validation-for="WedderTwo" class="text-danger font-weight-bold">Wedder Two: </span>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label asp-for="Date"></label>
+                        <input asp-for="Date" type="date" class="form-control" />
+                        <span asp-validation-for="Date" class="text-danger font-weight-bold">Date: </span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group mb-3">
+                        @*<span class="input-group-text" for="Tastiness">Tastiness</span>
+                        <select asp-for="Tastiness" class="form-control" type="text" id="Tastiness">
+                        <option selected>Select A Level of Tastiness </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        </select>
+                        </div>*@
+                        <label asp-for="Address"></label>
+                        <input asp-for="Address" type="text" class="form-control"/>
+                        <span asp-validation-for="Address" class="text-danger font-weight-bold">Address: </span>
+                        @* <div class="input-group mb-3">
+                        <span class="input-group-text" for="Description"> Description </span>
+                        <textarea asp-for="Description" class="form-control" id="Description" cols="20"
+                        rows="3"></textarea>
+                        </div> *@
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn btn-dark w-25 mx-auto" type="submit">Create</button>
+                </div>
+            </div>
+    </form>
+    <span class="text-danger" asp-validation-for="WedderOne"></span>
+    <br>
+    <span class="text-danger" asp-validation-for="WedderTwo"></span>
+    <br>
+    <span class="text-danger" asp-validation-for="Date"></span>
+    <br>
+    <span class="text-danger" asp-validation-for="Address"></span>
+    <br>
+    @* <span class="text-danger" asp-validation-for="Description"></span> *@
+</div>

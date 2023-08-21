@@ -37,7 +37,7 @@ public class Wedding
     //! ====== adding many to many - user to weddings linking ========
 
     //-------many to many connection----------
-    public List<WeddingGuest> WeddingGuests {get; set;} = new List<WeddingGuest>();
+    public List<WeddingGuest> Guests {get; set;} = new List<WeddingGuest>();
 
 }
 

@@ -53,7 +53,7 @@ public class UserController : Controller
         db.SaveChanges();
         HttpContext.Session.SetInt32("UUID", newUser.UserId);
 
-        return RedirectToAction("Dashboard");
+        return RedirectToAction("Index", "Wedding"); // Make sure to change for the exam("Method Action from controller", "Name of controller where the method is from")
 
     }
     //-----Login-----
@@ -82,8 +82,9 @@ public class UserController : Controller
             }
             else
             {
+                //HANDLE SUCCESS (THIS SHOULD ROUTE TO AN INTERNAL PAGE)
                 HttpContext.Session.SetInt32("UUID", userInDb.UserId);
-                return RedirectToAction("Dashboard");
+                return RedirectToAction("Index", "Wedding"); // Make sure to change for the exam("Method Action from controller", "Name of controller where the method is from")
             }
 
         }
