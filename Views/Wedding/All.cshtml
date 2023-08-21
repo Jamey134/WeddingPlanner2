@@ -33,7 +33,7 @@
                         @if (alreadyRSVP)
                         {
                             <td>
-                                <form asp-controller="Wedding" asp-action="RSVP" asp-route-weddingId="@w.WeddingId">
+                                <form asp-controller="Wedding" asp-action="RSVP" asp-route-id="@w.WeddingId">
                                     <button class="btn btn-outline-primary">Un-RSVP</button>
                                 </form>
                             </td>
@@ -41,7 +41,7 @@
                         else 
                         {
                             <td>
-                                <form asp-controller="Wedding" asp-action="RSVP" asp-route-weddingId="@w.WeddingId">
+                                <form asp-controller="Wedding" asp-action="RSVP" asp-route-id="@w.WeddingId">
                                     <button class="btn btn-outline-primary">RSVP</button>
                                 </form>
                             </td>

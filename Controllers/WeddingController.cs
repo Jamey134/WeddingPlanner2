@@ -32,7 +32,7 @@ public class WeddingController : Controller
         {
             //Many to many, add guests list and invited guests, to get 3 tables of information
             List<Wedding> weddings = db.Weddings.Include(g => g.Guests).ThenInclude(u => u.User).Include(c => c.Creator).ToList();
-            return View("All");
+            return View("All", weddings);
         }
     }
 
@@ -60,7 +60,7 @@ public class WeddingController : Controller
             return View("New");
         }
     }
-//---------View One Wedding----------
+//---------View One (READ) Wedding----------
     [HttpGet("weddings/{weddingId}")]
     public IActionResult Details(int weddingId)
     {
@@ -136,10 +136,11 @@ public class WeddingController : Controller
                 WeddingId = id,
                 UserId = userId.Value 
             };
+            Console.WriteLine(newRSVP);
             db.WeddingGuests.Add(newRSVP);
         }
         db.SaveChanges();
-        return RedirectToAction("Index");
+        return RedirectToAction("Index", "Wedding");
 
     }
 
